@@ -13186,6 +13186,13 @@ BP4BpYfAP6D0EPgHlB4C/4DSQ+AfUHoI/ANKD4F/QOn/A3mTGi6m4IJjAAAAAElFTkSuQmCC
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Created the training model with a training rate of 0.001, and using softmax. Objective was to reduce the cost </span>
 <span class="c1"># or improve the training accuracy</span>
 <span class="c1">#</span>
+<span class="c1"># Resubmission Text: *** Selectd the batch size of 128 (had tried with 256 and expectde better </span>
+<span class="c1"># results), as other sized did not yield any additional benefits</span>
+<span class="c1"># </span>
+<span class="c1"># Epocks were left @ 10, as I noticed that after 7 or 8, the values were not improving, and I</span>
+<span class="c1"># was running on my laptop, without a GPU or an AWS account, did not want to spend much time </span>
+<span class="c1"># in computing ***</span>
+<span class="c1">#</span>
 <span class="c1"># Evaluated the model to see how well the loss and accuracy of the model for a given dataset.</span>
 <span class="c1"># </span>
 <span class="c1"># Ran the training data through the training pipeline to train the model. Before each epoch, shuffled the training set.</span>
@@ -13575,7 +13582,10 @@ Tensor(&#34;add_4:0&#34;, shape=(?, 43), dtype=float32)
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># I have taken 5 signs from the web (all German signs) for checking out how the model predicts.. while I expected </span>
-<span class="c1"># some issues not sure why the prdiction accuracy is only 60%</span>
+<span class="c1"># </span>
+<span class="c1"># Resubmission New Text: *** I realized that the results were not not 100% accurate as predicted, </span>
+<span class="c1"># because the symbols were not Triangular as in the rest of data set, but round.. ***</span>
+<span class="c1">#</span>
 </pre></div>
 
 </div>
@@ -15321,10 +15331,13 @@ tf.nn.top_k(prediction, 5).indices [array([18, 15, 38, 37, 12], dtype=int32), ar
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Resubmission Text: *** As can be seen be seen from the image above, the predictor is very</span>
+<span class="c1"># certain on its results - with a 100% probability for one (top prediction) and 0 for the rest</span>
+<span class="c1"># for all 5 images. This may mean that the model does not need any retuning/ or need any </span>
+<span class="c1"># new network architecture. ***</span>
 </pre></div>
 
 </div>
